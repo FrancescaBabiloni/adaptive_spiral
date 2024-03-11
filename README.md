@@ -2,13 +2,16 @@
 This repo contains the implementation for the ICCV23 paper "Adaptive Spiral Layers for Efficient 3D Representation Learning on Meshes".
 
 ## The Adaptive Spiral Operator
-Adaptive Spiral Convolution dynamically adjusts the length of the spiral trajectory and the parameters of the transformation for each processed vertex and
+
+![adaptive_spiral](https://github.com/Fb2221/adaptive_spiral/assets/142507271/87429db2-6ebb-439e-a1a2-0ed7e37ca146)
+
+Adaptive Spiral Convolution extracts and transforms the vertices in the 3D mesh following a spiral
+order. It then dynamically adjusts the length of the spiral trajectory and the parameters of the transformation for each processed vertex and
 mesh. 
-<p align="center"><img src="./assets/142507271/35d7db00-8519-4719-a3b3-e321b11a14b3" align=middle width=77.33054999999999pt height=13.156093499999999pt/></p>
+
 You can find its implementation in adaptive_spiral.py.
 
 ## Installation
-In our implementation we follow the original [SpiralNet++] (https://github.com/sw-gong/spiralnet_plus/tree/master) codebase.
 The code is developed using Python 3.6 on Ubuntu 16.04. The models were trained and tested with NVIDIA Tesla V100.
 * [Pytorch](https://pytorch.org/) (1.13.0)
 * [Pytorch Geometric](https://github.com/rusty1s/pytorch_geometric) (2.3.1)
@@ -16,13 +19,14 @@ The code is developed using Python 3.6 on Ubuntu 16.04. The models were trained 
 * [MPI-IS Mesh](https://github.com/MPI-IS/mesh): installed from source.
 
 ## Train 3D Face Reconstruction on CoMA
-Download the CoMA dataset from [here] (https://coma.is.tue.mpg.de/). Run the interpolation experiment :
+We follow the original [SpiralNet++](https://github.com/sw-gong/spiralnet_plus/tree/master) codebase.
+To perform a quick run, download the CoMA dataset from [here](https://coma.is.tue.mpg.de/) and then run the interpolation experiment using:
 ```
 python -m reconstruction.main --config ./config/reconstruction/AdaptiveSpiralconv.yaml
 ```
 
 ## Citation
-Please consider citing our work:
+If you find this repo useful consider citing our work:
 ```
 @inproceedings{babiloni2023adaptive,
   title={Adaptive Spiral Layers for Efficient 3D Representation Learning on Meshes},
