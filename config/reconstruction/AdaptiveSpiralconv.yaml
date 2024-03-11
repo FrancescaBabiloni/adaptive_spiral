@@ -1,0 +1,21 @@
+batch_size: 32
+dataset: CoMA
+dataroot: /path/to/data/root
+exp_name: Adaptive_SpiralConv
+description: 'Adaptive_SpiralConv'
+layer: [SpiralConv,SpiralConv,Adaptive_SpiralConv,Adaptive_SpiralConv]
+out_channels: [32, 32, 32, 64]
+seq_length: [9, 9, 9, 9]
+dynamic_seq_length: [1,1,312,78]
+dilation: [1,1,1,1]
+epochs: 300
+in_channels: 3
+latent_channels: 16
+optimizer: Adam
+lr: 0.001
+lr_decay: 0.99
+weight_decay: 0
+decay_step: 1
+n_threads: 4
+seed: 1
+fp16: false
